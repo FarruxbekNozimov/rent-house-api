@@ -12,10 +12,11 @@ import {
 import { AdminService } from './admin.service';
 import { CreateAdminDto } from './dto/create-admin.dto';
 import { UpdateAdminDto } from './dto/update-admin.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { HttpCode } from '@nestjs/common';
 import { AdminGuards } from '../guards/admin.guards';
 
+@ApiBearerAuth()
 @ApiTags('Admin')
 @Controller('admin')
 export class AdminController {

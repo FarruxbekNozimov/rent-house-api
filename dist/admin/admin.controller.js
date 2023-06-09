@@ -105,6 +105,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "remove", null);
 AdminController = __decorate([
+    (0, swagger_1.ApiBearerAuth)(),
     (0, swagger_1.ApiTags)('Admin'),
     (0, common_1.Controller)('admin'),
     __metadata("design:paramtypes", [admin_service_1.AdminService])

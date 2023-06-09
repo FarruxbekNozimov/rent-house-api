@@ -92,6 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RentController.prototype, "remove", null);
 RentController = __decorate([
+    (0, swagger_1.ApiBearerAuth)(),
     (0, swagger_1.ApiTags)('Rent'),
     (0, common_1.Controller)('rent'),
     __metadata("design:paramtypes", [rent_service_1.RentService])

@@ -92,6 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DistrictController.prototype, "remove", null);
 DistrictController = __decorate([
+    (0, swagger_1.ApiBearerAuth)(),
     (0, swagger_1.ApiTags)('District'),
     (0, common_1.Controller)('district'),
     __metadata("design:paramtypes", [district_service_1.DistrictService])

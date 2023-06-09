@@ -92,6 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RegionController.prototype, "remove", null);
 RegionController = __decorate([
+    (0, swagger_1.ApiBearerAuth)(),
     (0, swagger_1.ApiTags)('Region'),
     (0, common_1.Controller)('region'),
     __metadata("design:paramtypes", [region_service_1.RegionService])

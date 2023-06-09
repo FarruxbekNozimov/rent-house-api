@@ -12,10 +12,11 @@ import {
 import { DistrictService } from './district.service';
 import { CreateDistrictDto } from './dto/create-district.dto';
 import { UpdateDistrictDto } from './dto/update-district.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { HttpCode } from '@nestjs/common';
 import { AdminGuards } from "../guards/admin.guards";
 
+@ApiBearerAuth()
 @ApiTags('District')
 @Controller('district')
 export class DistrictController {

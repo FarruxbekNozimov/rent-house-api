@@ -92,6 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], NotificationController.prototype, "remove", null);
 NotificationController = __decorate([
+    (0, swagger_1.ApiBearerAuth)(),
     (0, swagger_1.ApiTags)('Notification'),
     (0, common_1.Controller)('notification'),
     __metadata("design:paramtypes", [notification_service_1.NotificationService])

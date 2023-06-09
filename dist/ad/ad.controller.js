@@ -92,6 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdController.prototype, "remove", null);
 AdController = __decorate([
+    (0, swagger_1.ApiBearerAuth)(),
     (0, swagger_1.ApiTags)('Ad'),
     (0, common_1.Controller)('ad'),
     __metadata("design:paramtypes", [ad_service_1.AdService])

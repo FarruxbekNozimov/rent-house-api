@@ -12,10 +12,11 @@ import {
 import { RegionService } from './region.service';
 import { CreateRegionDto } from './dto/create-region.dto';
 import { UpdateRegionDto } from './dto/update-region.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { HttpCode } from '@nestjs/common';
 import { AdminGuards } from '../guards/admin.guards';
 
+@ApiBearerAuth()
 @ApiTags('Region')
 @Controller('region')
 export class RegionController {
