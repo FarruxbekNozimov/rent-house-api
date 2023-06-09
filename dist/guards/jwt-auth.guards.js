@@ -22,11 +22,13 @@ let JwtAuthGuard = class JwtAuthGuard {
         if (!authHeader)
             throw new common_1.UnauthorizedException({
                 msg: 'User is not authorized',
+                status: 401,
             });
         const [bearer, token] = authHeader.split(' ');
         if (bearer !== 'Bearer' || !token) {
             throw new common_1.UnauthorizedException({
                 msg: 'User is not authorized',
+                status: 401,
             });
         }
         let user;
@@ -38,6 +40,7 @@ let JwtAuthGuard = class JwtAuthGuard {
         catch (error) {
             throw new common_1.UnauthorizedException({
                 msg: 'User is not authorized',
+                status: 401,
             });
         }
         req.user = user;

@@ -22,12 +22,14 @@ let AdminGuards = class AdminGuards {
         if (!authHeader)
             throw new common_1.UnauthorizedException({
                 msg: 'User not autorized',
+                status: 401,
             });
         const bearer = authHeader.split(' ')[0];
         const token = authHeader.split(' ')[1];
         if (bearer !== 'Bearer' || !token) {
             throw new common_1.UnauthorizedException({
                 msg: 'User not autorized',
+                status: 401,
             });
         }
         let user;
@@ -39,11 +41,13 @@ let AdminGuards = class AdminGuards {
         catch (error) {
             throw new common_1.UnauthorizedException({
                 msg: 'User not autorized',
+                status: 401,
             });
         }
         if (user.role != 'ADMIN') {
             throw new common_1.UnauthorizedException({
                 msg: 'User is not admin',
+                status: 401,
             });
         }
         req.user = user;

@@ -15,11 +15,13 @@ export class JwtAuthGuard implements CanActivate {
     if (!authHeader)
       throw new UnauthorizedException({
         msg: 'User is not authorized',
+        status: 401,
       });
     const [bearer, token] = authHeader.split(' ');
     if (bearer !== 'Bearer' || !token) {
       throw new UnauthorizedException({
         msg: 'User is not authorized',
+        status: 401,
       });
     }
     let user: any;
@@ -30,6 +32,7 @@ export class JwtAuthGuard implements CanActivate {
     } catch (error) {
       throw new UnauthorizedException({
         msg: 'User is not authorized',
+        status: 401,
       });
     }
     req.user = user;
