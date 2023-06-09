@@ -14,12 +14,12 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateOrderDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "507f1f77bcf86cd799439011" }),
+    (0, swagger_1.ApiProperty)({ example: '507f1f77bcf86cd799439011' }),
     __metadata("design:type", Number)
 ], CreateOrderDto.prototype, "seller_id", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "507f1f77bcf86cd799439011" }),
+    (0, swagger_1.ApiProperty)({ example: '507f1f77bcf86cd799439011' }),
     __metadata("design:type", Number)
-], CreateOrderDto.prototype, "reciever_id", void 0);
+], CreateOrderDto.prototype, "receiver_id", void 0);
 exports.CreateOrderDto = CreateOrderDto;
 //# sourceMappingURL=create-order.dto.js.map

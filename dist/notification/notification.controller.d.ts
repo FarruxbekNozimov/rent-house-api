@@ -36,13 +36,13 @@ export declare class NotificationController {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
-    findAll(query: any): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/notification.schema").Notification> & Omit<import("./schemas/notification.schema").Notification & {
+    findAll(query: any): Promise<Omit<Omit<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/notification.schema").Notification> & Omit<import("./schemas/notification.schema").Notification & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/notification.schema").Notification> & Omit<import("./schemas/notification.schema").Notification & {
         _id: import("mongoose").Types.ObjectId;
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
-    }>, never>)[]>;
+    }>, never>, never>, never>[]>;
     findOne(id: string): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/notification.schema").Notification> & Omit<import("./schemas/notification.schema").Notification & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/notification.schema").Notification> & Omit<import("./schemas/notification.schema").Notification & {

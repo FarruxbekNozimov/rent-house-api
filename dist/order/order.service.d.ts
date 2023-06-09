@@ -36,13 +36,13 @@ export declare class OrderService {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
-    findAll(query: string): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
+    findAll(query: string): Promise<Omit<Omit<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
-    }>, never>)[]>;
+    }>, never>, never>, never>[]>;
     findOne(id: string): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Order> & Omit<Order & {

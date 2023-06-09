@@ -26,11 +26,19 @@ let NotificationService = class NotificationService {
         return res;
     }
     async findAll(query) {
-        const res = await this.currentModel.find().exec();
+        const res = await this.currentModel
+            .find()
+            .populate('user_id')
+            .populate('appeal_id')
+            .exec();
         return res;
     }
     async findOne(id) {
-        return this.currentModel.findById(id).exec();
+        return this.currentModel
+            .findById(id)
+            .populate('user_id')
+            .populate('appeal_id')
+            .exec();
     }
     async fineByUserId(user_id) {
         return this.currentModel.find({ user_id }).exec();

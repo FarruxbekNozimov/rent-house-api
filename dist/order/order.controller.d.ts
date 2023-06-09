@@ -36,13 +36,13 @@ export declare class OrderController {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
-    findAll(query: any): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/order.schema").Order> & Omit<import("./schemas/order.schema").Order & {
+    findAll(query: any): Promise<Omit<Omit<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/order.schema").Order> & Omit<import("./schemas/order.schema").Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/order.schema").Order> & Omit<import("./schemas/order.schema").Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
-    }>, never>)[]>;
+    }>, never>, never>, never>[]>;
     findOne(id: string): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/order.schema").Order> & Omit<import("./schemas/order.schema").Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/order.schema").Order> & Omit<import("./schemas/order.schema").Order & {

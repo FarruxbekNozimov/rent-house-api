@@ -36,13 +36,13 @@ export declare class AdController {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
-    findAll(query: any): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/ad.schema").Ad> & Omit<import("./schemas/ad.schema").Ad & {
+    findAll(query: any): Promise<Omit<Omit<Omit<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/ad.schema").Ad> & Omit<import("./schemas/ad.schema").Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/ad.schema").Ad> & Omit<import("./schemas/ad.schema").Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
-    }>, never>)[]>;
+    }>, never>, never>, never>, never>[]>;
     findOne(id: string): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/ad.schema").Ad> & Omit<import("./schemas/ad.schema").Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/ad.schema").Ad> & Omit<import("./schemas/ad.schema").Ad & {

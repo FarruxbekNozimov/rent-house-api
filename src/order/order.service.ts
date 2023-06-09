@@ -18,12 +18,20 @@ export class OrderService {
   }
 
   async findAll(query: string) {
-    const res = await this.currentModel.find().exec();
+    const res = await this.currentModel
+      .find()
+      .populate('seller_id')
+      .populate('receiver_id')
+      .exec();
     return res;
   }
 
   async findOne(id: string) {
-    return this.currentModel.findById(id).exec();
+    return this.currentModel
+      .findById(id)
+      .populate('seller_id')
+      .populate('receiver_id')
+      .exec();
   }
 
   async findBySellerId(id: string) {

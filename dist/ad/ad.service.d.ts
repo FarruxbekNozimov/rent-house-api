@@ -36,13 +36,13 @@ export declare class AdService {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
-    findAll(query: string): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
+    findAll(query: string): Promise<Omit<Omit<Omit<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
-    }>, never>)[]>;
+    }>, never>, never>, never>, never>[]>;
     findOne(id: string): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {

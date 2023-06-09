@@ -21,12 +21,20 @@ export class NotificationService {
   }
 
   async findAll(query: string) {
-    const res = await this.currentModel.find().exec();
+    const res = await this.currentModel
+      .find()
+      .populate('user_id')
+      .populate('appeal_id')
+      .exec();
     return res;
   }
 
   async findOne(id: string) {
-    return this.currentModel.findById(id).exec();
+    return this.currentModel
+      .findById(id)
+      .populate('user_id')
+      .populate('appeal_id')
+      .exec();
   }
 
   async fineByUserId(user_id: string) {

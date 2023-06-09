@@ -18,12 +18,22 @@ export class RentService {
   }
 
   async findAll(query: string) {
-    const res = await this.currentModel.find().exec();
+    const res = await this.currentModel
+      .find()
+      .populate('user_id')
+      .populate('region_id')
+      .populate('district_id')
+      .exec();
     return res;
   }
 
   async findOne(id: string) {
-    return this.currentModel.findById(id).exec();
+    return this.currentModel
+      .findById(id)
+      .populate('user_id')
+      .populate('region_id')
+      .populate('district_id')
+      .exec();
   }
 
   async update(id: string, updateRentDto: UpdateRentDto) {

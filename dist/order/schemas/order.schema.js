@@ -21,7 +21,7 @@ __decorate([
 __decorate([
     (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
-], Order.prototype, "reciever_id", void 0);
+], Order.prototype, "receiver_id", void 0);
 Order = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Order);

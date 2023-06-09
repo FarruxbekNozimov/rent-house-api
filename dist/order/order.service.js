@@ -26,11 +26,19 @@ let OrderService = class OrderService {
         return res;
     }
     async findAll(query) {
-        const res = await this.currentModel.find().exec();
+        const res = await this.currentModel
+            .find()
+            .populate('seller_id')
+            .populate('receiver_id')
+            .exec();
         return res;
     }
     async findOne(id) {
-        return this.currentModel.findById(id).exec();
+        return this.currentModel
+            .findById(id)
+            .populate('seller_id')
+            .populate('receiver_id')
+            .exec();
     }
     async findBySellerId(id) {
         return this.currentModel.find({ seller_id: id }).exec();

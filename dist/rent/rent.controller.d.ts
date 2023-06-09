@@ -36,13 +36,13 @@ export declare class RentController {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
-    findAll(query: any): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/rent.schema").Rent> & Omit<import("./schemas/rent.schema").Rent & {
+    findAll(query: any): Promise<Omit<Omit<Omit<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/rent.schema").Rent> & Omit<import("./schemas/rent.schema").Rent & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/rent.schema").Rent> & Omit<import("./schemas/rent.schema").Rent & {
         _id: import("mongoose").Types.ObjectId;
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
-    }>, never>)[]>;
+    }>, never>, never>, never>, never>[]>;
     findOne(id: string): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("./schemas/rent.schema").Rent> & Omit<import("./schemas/rent.schema").Rent & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, import("./schemas/rent.schema").Rent> & Omit<import("./schemas/rent.schema").Rent & {
