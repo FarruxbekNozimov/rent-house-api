@@ -18,27 +18,27 @@ const district_schema_1 = require("./schemas/district.schema");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 let DistrictService = class DistrictService {
-    constructor(orderModel) {
-        this.orderModel = orderModel;
+    constructor(currentModel) {
+        this.currentModel = currentModel;
     }
     async create(createDistrictDto) {
-        const res = await new this.orderModel(createDistrictDto).save();
+        const res = await new this.currentModel(createDistrictDto).save();
         return res;
     }
     async findAll(query) {
-        const res = await this.orderModel.find().exec();
+        const res = await this.currentModel.find().exec();
         return res;
     }
     async findOne(id) {
-        return this.orderModel.findById(id).exec();
+        return this.currentModel.findById(id).exec();
     }
     async update(id, updateDistrictDto) {
-        return this.orderModel
+        return this.currentModel
             .findByIdAndUpdate(id, updateDistrictDto, { new: true })
             .exec();
     }
     async remove(id) {
-        return this.orderModel.findByIdAndDelete(id).exec();
+        return this.currentModel.findByIdAndDelete(id).exec();
     }
 };
 DistrictService = __decorate([

@@ -18,6 +18,7 @@ const notification_service_1 = require("./notification.service");
 const create_notification_dto_1 = require("./dto/create-notification.dto");
 const update_notification_dto_1 = require("./dto/update-notification.dto");
 const swagger_1 = require("@nestjs/swagger");
+const jwt_auth_guards_1 = require("../guards/jwt-auth.guards");
 const common_2 = require("@nestjs/common");
 let NotificationController = class NotificationController {
     constructor(notificationService) {
@@ -40,6 +41,7 @@ let NotificationController = class NotificationController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create notification' }),
     (0, common_1.Post)(),
@@ -49,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], NotificationController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all notification' }),
     (0, common_1.Get)(),
@@ -58,6 +61,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], NotificationController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one notification' }),
     (0, common_1.Get)(':id'),
@@ -67,6 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], NotificationController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update notification by id' }),
     (0, common_1.Put)(':id'),
@@ -77,6 +82,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], NotificationController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete notification by id' }),
     (0, common_1.Delete)(':id'),

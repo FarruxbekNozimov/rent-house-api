@@ -19,6 +19,7 @@ const create_user_dto_1 = require("./dto/create-user.dto");
 const update_user_dto_1 = require("./dto/update-user.dto");
 const swagger_1 = require("@nestjs/swagger");
 const common_2 = require("@nestjs/common");
+const admin_guards_1 = require("../guards/admin.guards");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
@@ -43,6 +44,7 @@ let UserController = class UserController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create user' }),
     (0, common_1.Post)(),
@@ -52,6 +54,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all user' }),
     (0, common_1.Get)(),
@@ -61,6 +64,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one user' }),
     (0, common_1.Get)(':id'),
@@ -70,6 +74,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one user by phone number' }),
     (0, common_1.Get)('phone/:phone'),
@@ -79,6 +84,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "findByPhone", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update user by id' }),
     (0, common_1.Put)(':id'),
@@ -89,6 +95,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete user by id' }),
     (0, common_1.Delete)(':id'),

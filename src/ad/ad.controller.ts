@@ -13,7 +13,7 @@ import { AdService } from './ad.service';
 import { CreateAdDto } from './dto/create-ad.dto';
 import { UpdateAdDto } from './dto/update-ad.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-// import { JwtAuthGuard } from '../guards/jwt-auth.guards';
+import { JwtAuthGuard } from '../guards/jwt-auth.guards';
 import { HttpCode } from '@nestjs/common';
 
 @ApiTags('Ad')
@@ -21,7 +21,7 @@ import { HttpCode } from '@nestjs/common';
 export class AdController {
   constructor(private readonly adService: AdService) {}
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Create ad' })
   @Post()
@@ -29,7 +29,7 @@ export class AdController {
     return this.adService.create(createAdDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Find all ad' })
   @Get()
@@ -37,7 +37,7 @@ export class AdController {
     return this.adService.findAll(query);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Get one ad' })
   @Get(':id')
@@ -45,7 +45,7 @@ export class AdController {
     return this.adService.findOne(id);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Update ad by id' })
   @Put(':id')
@@ -53,7 +53,7 @@ export class AdController {
     return this.adService.update(id, updateAdDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Delete ad by id' })
   @Delete(':id')

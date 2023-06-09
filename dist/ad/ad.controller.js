@@ -18,6 +18,7 @@ const ad_service_1 = require("./ad.service");
 const create_ad_dto_1 = require("./dto/create-ad.dto");
 const update_ad_dto_1 = require("./dto/update-ad.dto");
 const swagger_1 = require("@nestjs/swagger");
+const jwt_auth_guards_1 = require("../guards/jwt-auth.guards");
 const common_2 = require("@nestjs/common");
 let AdController = class AdController {
     constructor(adService) {
@@ -40,6 +41,7 @@ let AdController = class AdController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create ad' }),
     (0, common_1.Post)(),
@@ -49,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all ad' }),
     (0, common_1.Get)(),
@@ -58,6 +61,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one ad' }),
     (0, common_1.Get)(':id'),
@@ -67,6 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update ad by id' }),
     (0, common_1.Put)(':id'),
@@ -77,6 +82,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete ad by id' }),
     (0, common_1.Delete)(':id'),

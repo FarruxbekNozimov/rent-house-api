@@ -13,15 +13,15 @@ import { AdminService } from './admin.service';
 import { CreateAdminDto } from './dto/create-admin.dto';
 import { UpdateAdminDto } from './dto/update-admin.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-// import { JwtAuthGuard } from '../guards/jwt-auth.guards';
 import { HttpCode } from '@nestjs/common';
+import { AdminGuards } from '../guards/admin.guards';
 
 @ApiTags('Admin')
 @Controller('admin')
 export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuards)
   @HttpCode(200)
   @ApiOperation({ summary: 'Create admin' })
   @Post()
@@ -29,7 +29,7 @@ export class AdminController {
     return this.adminService.create(createAdminDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuards)
   @HttpCode(200)
   @ApiOperation({ summary: 'Find all admin' })
   @Get()
@@ -37,7 +37,7 @@ export class AdminController {
     return this.adminService.findAll(query);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuards)
   @HttpCode(200)
   @ApiOperation({ summary: 'Get one admin' })
   @Get(':id')
@@ -45,7 +45,7 @@ export class AdminController {
     return this.adminService.findOne(id);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuards)
   @HttpCode(200)
   @ApiOperation({ summary: 'Get one admin by phone number' })
   @Get('phone/:phone')
@@ -53,7 +53,7 @@ export class AdminController {
     return this.adminService.findByPhone(phone);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuards)
   @HttpCode(200)
   @ApiOperation({ summary: 'Update admin by id' })
   @Put(':id')
@@ -61,7 +61,7 @@ export class AdminController {
     return this.adminService.update(id, updateAdminDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(AdminGuards)
   @HttpCode(200)
   @ApiOperation({ summary: 'Delete admin by id' })
   @Delete(':id')

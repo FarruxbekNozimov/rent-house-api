@@ -13,7 +13,7 @@ import { NotificationService } from './notification.service';
 import { CreateNotificationDto } from './dto/create-notification.dto';
 import { UpdateNotificationDto } from './dto/update-notification.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-// import { JwtAuthGuard } from '../guards/jwt-auth.guards';
+import { JwtAuthGuard } from '../guards/jwt-auth.guards';
 import { HttpCode } from '@nestjs/common';
 
 @ApiTags('Notification')
@@ -21,7 +21,7 @@ import { HttpCode } from '@nestjs/common';
 export class NotificationController {
   constructor(private readonly notificationService: NotificationService) {}
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Create notification' })
   @Post()
@@ -29,7 +29,7 @@ export class NotificationController {
     return this.notificationService.create(createNotificationDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Find all notification' })
   @Get()
@@ -37,7 +37,7 @@ export class NotificationController {
     return this.notificationService.findAll(query);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Get one notification' })
   @Get(':id')
@@ -45,15 +45,18 @@ export class NotificationController {
     return this.notificationService.findOne(id);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Update notification by id' })
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateNotificationDto: UpdateNotificationDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateNotificationDto: UpdateNotificationDto,
+  ) {
     return this.notificationService.update(id, updateNotificationDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Delete notification by id' })
   @Delete(':id')

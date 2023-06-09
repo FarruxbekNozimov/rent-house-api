@@ -18,6 +18,7 @@ const order_service_1 = require("./order.service");
 const create_order_dto_1 = require("./dto/create-order.dto");
 const update_order_dto_1 = require("./dto/update-order.dto");
 const swagger_1 = require("@nestjs/swagger");
+const jwt_auth_guards_1 = require("../guards/jwt-auth.guards");
 const common_2 = require("@nestjs/common");
 let OrderController = class OrderController {
     constructor(orderService) {
@@ -40,6 +41,7 @@ let OrderController = class OrderController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create order' }),
     (0, common_1.Post)(),
@@ -49,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all order' }),
     (0, common_1.Get)(),
@@ -58,6 +61,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one order' }),
     (0, common_1.Get)(':id'),
@@ -67,6 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update order by id' }),
     (0, common_1.Put)(':id'),
@@ -77,6 +82,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete order by id' }),
     (0, common_1.Delete)(':id'),

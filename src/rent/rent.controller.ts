@@ -13,7 +13,7 @@ import { RentService } from './rent.service';
 import { CreateRentDto } from './dto/create-rent.dto';
 import { UpdateRentDto } from './dto/update-rent.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-// import { JwtAuthGuard } from '../guards/jwt-auth.guards';
+import { JwtAuthGuard } from '../guards/jwt-auth.guards';
 import { HttpCode } from '@nestjs/common';
 
 @ApiTags('Rent')
@@ -21,7 +21,7 @@ import { HttpCode } from '@nestjs/common';
 export class RentController {
   constructor(private readonly rentService: RentService) {}
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Create rent' })
   @Post()
@@ -29,7 +29,7 @@ export class RentController {
     return this.rentService.create(createRentDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Find all rent' })
   @Get()
@@ -37,7 +37,7 @@ export class RentController {
     return this.rentService.findAll(query);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Get one rent' })
   @Get(':id')
@@ -45,7 +45,7 @@ export class RentController {
     return this.rentService.findOne(id);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Update rent by id' })
   @Put(':id')
@@ -53,7 +53,7 @@ export class RentController {
     return this.rentService.update(id, updateRentDto);
   }
 
-  //  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
   @ApiOperation({ summary: 'Delete rent by id' })
   @Delete(':id')

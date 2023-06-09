@@ -19,6 +19,7 @@ const create_district_dto_1 = require("./dto/create-district.dto");
 const update_district_dto_1 = require("./dto/update-district.dto");
 const swagger_1 = require("@nestjs/swagger");
 const common_2 = require("@nestjs/common");
+const admin_guards_1 = require("../guards/admin.guards");
 let DistrictController = class DistrictController {
     constructor(districtService) {
         this.districtService = districtService;
@@ -40,6 +41,7 @@ let DistrictController = class DistrictController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create district' }),
     (0, common_1.Post)(),
@@ -49,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DistrictController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all district' }),
     (0, common_1.Get)(),
@@ -58,6 +61,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DistrictController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one district' }),
     (0, common_1.Get)(':id'),
@@ -67,6 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DistrictController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update district by id' }),
     (0, common_1.Put)(':id'),
@@ -77,6 +82,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], DistrictController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete district by id' }),
     (0, common_1.Delete)(':id'),

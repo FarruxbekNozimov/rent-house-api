@@ -19,6 +19,7 @@ const create_region_dto_1 = require("./dto/create-region.dto");
 const update_region_dto_1 = require("./dto/update-region.dto");
 const swagger_1 = require("@nestjs/swagger");
 const common_2 = require("@nestjs/common");
+const admin_guards_1 = require("../guards/admin.guards");
 let RegionController = class RegionController {
     constructor(regionService) {
         this.regionService = regionService;
@@ -40,6 +41,7 @@ let RegionController = class RegionController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create region' }),
     (0, common_1.Post)(),
@@ -49,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RegionController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all region' }),
     (0, common_1.Get)(),
@@ -58,6 +61,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RegionController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one region' }),
     (0, common_1.Get)(':id'),
@@ -67,6 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RegionController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update region by id' }),
     (0, common_1.Put)(':id'),
@@ -77,6 +82,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RegionController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete region by id' }),
     (0, common_1.Delete)(':id'),

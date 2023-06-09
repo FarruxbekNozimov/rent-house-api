@@ -19,6 +19,7 @@ const create_admin_dto_1 = require("./dto/create-admin.dto");
 const update_admin_dto_1 = require("./dto/update-admin.dto");
 const swagger_1 = require("@nestjs/swagger");
 const common_2 = require("@nestjs/common");
+const admin_guards_1 = require("../guards/admin.guards");
 let AdminController = class AdminController {
     constructor(adminService) {
         this.adminService = adminService;
@@ -43,6 +44,7 @@ let AdminController = class AdminController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create admin' }),
     (0, common_1.Post)(),
@@ -52,6 +54,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all admin' }),
     (0, common_1.Get)(),
@@ -61,6 +64,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one admin' }),
     (0, common_1.Get)(':id'),
@@ -70,6 +74,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one admin by phone number' }),
     (0, common_1.Get)('phone/:phone'),
@@ -79,6 +84,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "findByPhone", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update admin by id' }),
     (0, common_1.Put)(':id'),
@@ -89,6 +95,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AdminController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(admin_guards_1.AdminGuards),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete admin by id' }),
     (0, common_1.Delete)(':id'),

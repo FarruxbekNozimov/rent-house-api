@@ -18,6 +18,7 @@ const rent_service_1 = require("./rent.service");
 const create_rent_dto_1 = require("./dto/create-rent.dto");
 const update_rent_dto_1 = require("./dto/update-rent.dto");
 const swagger_1 = require("@nestjs/swagger");
+const jwt_auth_guards_1 = require("../guards/jwt-auth.guards");
 const common_2 = require("@nestjs/common");
 let RentController = class RentController {
     constructor(rentService) {
@@ -40,6 +41,7 @@ let RentController = class RentController {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Create rent' }),
     (0, common_1.Post)(),
@@ -49,6 +51,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RentController.prototype, "create", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Find all rent' }),
     (0, common_1.Get)(),
@@ -58,6 +61,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RentController.prototype, "findAll", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Get one rent' }),
     (0, common_1.Get)(':id'),
@@ -67,6 +71,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RentController.prototype, "findOne", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Update rent by id' }),
     (0, common_1.Put)(':id'),
@@ -77,6 +82,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RentController.prototype, "update", null);
 __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guards_1.JwtAuthGuard),
     (0, common_2.HttpCode)(200),
     (0, swagger_1.ApiOperation)({ summary: 'Delete rent by id' }),
     (0, common_1.Delete)(':id'),
