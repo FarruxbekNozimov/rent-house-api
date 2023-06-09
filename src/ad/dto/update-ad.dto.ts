@@ -37,10 +37,10 @@ export class UpdateAdDto {
 	@ApiProperty({ example: "65000" })
 	price?: string;
 
-	@ApiProperty({ example: "undefined" })
+	@ApiProperty({ example: "5" })
 	people?: number;
 
-	@ApiProperty({ example: "undefined" })
+	@ApiProperty({ example: "oilali" })
 	client_status?: number;
 
 	@ApiProperty({ example: "5" })

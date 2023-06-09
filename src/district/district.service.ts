@@ -9,30 +9,30 @@ import { Model } from 'mongoose';
 export class DistrictService {
   constructor(
     @InjectModel(District.name)
-    private orderModel: Model<DistrictDocument>,
+    private currentModel: Model<DistrictDocument>,
   ) {}
 
   async create(createDistrictDto: CreateDistrictDto) {
-    const res = await new this.orderModel(createDistrictDto).save();
+    const res = await new this.currentModel(createDistrictDto).save();
     return res;
   }
 
   async findAll(query: string) {
-    const res = await this.orderModel.find().exec();
+    const res = await this.currentModel.find().exec();
     return res;
   }
 
   async findOne(id: string) {
-    return this.orderModel.findById(id).exec();
+    return this.currentModel.findById(id).exec();
   }
 
   async update(id: string, updateDistrictDto: UpdateDistrictDto) {
-    return this.orderModel
+    return this.currentModel
       .findByIdAndUpdate(id, updateDistrictDto, { new: true })
       .exec();
   }
 
   async remove(id: string) {
-    return this.orderModel.findByIdAndDelete(id).exec();
+    return this.currentModel.findByIdAndDelete(id).exec();
   }
 }

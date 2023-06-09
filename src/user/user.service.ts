@@ -1,9 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User, UserDocument } from './schemas/user.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
@@ -13,7 +14,11 @@ export class UserService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const res = await new this.orderModel(createUserDto).save();
+    const hashedPassword = await bcrypt.hash(createUserDto.password, 7);
+    const res = await new this.orderModel({
+      ...createUserDto,
+      password: hashedPassword,
+    }).save();
     return res;
   }
 
@@ -24,6 +29,26 @@ export class UserService {
 
   async findOne(id: string) {
     return this.orderModel.findById(id).exec();
+  }
+
+  async findByPhone(phone: string) {
+    const res = await this.orderModel.findOne({ phone }).exec();
+    if (!res)
+      throw new HttpException(
+        { msg: `User not found` },
+        HttpStatus.BAD_REQUEST,
+      );
+    return res;
+  }
+
+  async findByEmail(email: string) {
+    const res = await this.orderModel.findOne({ email }).exec();
+    if (!res)
+      throw new HttpException(
+        { msg: `User not found` },
+        HttpStatus.BAD_REQUEST,
+      );
+    return res;
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {

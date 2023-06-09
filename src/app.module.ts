@@ -11,6 +11,7 @@ import { OrderModule } from './order/order.module';
 import { NotificationModule } from './notification/notification.module';
 import { RegionModule } from './region/region.module';
 import { DistrictModule } from './district/district.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { DistrictModule } from './district/district.module';
     }),
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGO_URI),
+    AuthModule,
     UserModule,
     AdminModule,
     RentModule,

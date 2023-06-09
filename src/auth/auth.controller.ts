@@ -8,10 +8,11 @@ import {
   Get,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LoginDto } from './dto/login-user.dto';
+import { LoginDto } from './dto/login.dto';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 import { Response } from 'express';
 import { CookieGetter } from '../decorators/cookieGetter.decorator';
+import { CreateUserDto } from '../user/dto/create-user.dto';
 
 @ApiTags('Authentication')
 @Controller()
@@ -25,7 +26,7 @@ export class AuthController {
     return this.authService.login(loginDto, res);
   }
 
-  @ApiOperation({ summary: 'Login Admin' })
+  @ApiOperation({ summary: 'Login User' })
   @HttpCode(200)
   @Post('users/login')
   loginUser(
@@ -33,5 +34,15 @@ export class AuthController {
     @Res({ passthrough: true }) res: Response,
   ) {
     return this.authService.loginUser(loginDto, res);
+  }
+
+  @ApiOperation({ summary: 'Register User' })
+  @HttpCode(200)
+  @Post('users/register')
+  registerUser(
+    @Body() createUserDto: CreateUserDto,
+    @Res({ passthrough: true }) res: Response,
+  ) {
+    return this.authService.registerUser(createUserDto, res);
   }
 }

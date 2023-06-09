@@ -47,6 +47,14 @@ export class UserController {
 
   //  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
+  @ApiOperation({ summary: 'Get one user by phone number' })
+  @Get('phone/:phone')
+  findByPhone(@Param('phone') phone: string) {
+    return this.userService.findByPhone(phone);
+  }
+
+  //  @UseGuards(JwtAuthGuard)
+  @HttpCode(200)
   @ApiOperation({ summary: 'Update user by id' })
   @Put(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {

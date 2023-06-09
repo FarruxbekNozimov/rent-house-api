@@ -47,6 +47,14 @@ export class AdminController {
 
   //  @UseGuards(JwtAuthGuard)
   @HttpCode(200)
+  @ApiOperation({ summary: 'Get one admin by phone number' })
+  @Get('phone/:phone')
+  findByPhone(@Param('phone') phone: string) {
+    return this.adminService.findByPhone(phone);
+  }
+
+  //  @UseGuards(JwtAuthGuard)
+  @HttpCode(200)
   @ApiOperation({ summary: 'Update admin by id' })
   @Put(':id')
   update(@Param('id') id: string, @Body() updateAdminDto: UpdateAdminDto) {
