@@ -14,83 +14,85 @@ const swagger_1 = require("@nestjs/swagger");
 class CreateAdDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "507f1f77bcf86cd799439011" }),
+    (0, swagger_1.ApiProperty)({ example: '507f1f77bcf86cd799439011' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "region_id", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "507f1f77bcf86cd799439011" }),
+    (0, swagger_1.ApiProperty)({ example: '507f1f77bcf86cd799439011' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "district_id", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "Str. 7 Shuhrat chorraha" }),
+    (0, swagger_1.ApiProperty)({ example: 'Str. 7 Shuhrat chorraha' }),
     __metadata("design:type", String)
 ], CreateAdDto.prototype, "address", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "41.40338-2.17403" }),
+    (0, swagger_1.ApiProperty)({ example: '41.40338-2.17403' }),
     __metadata("design:type", String)
 ], CreateAdDto.prototype, "location", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "true" }),
+    (0, swagger_1.ApiProperty)({ example: 'true' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "gas", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "false" }),
+    (0, swagger_1.ApiProperty)({ example: 'false' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "light", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "true" }),
+    (0, swagger_1.ApiProperty)({ example: 'true' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "water_cold", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "true" }),
+    (0, swagger_1.ApiProperty)({ example: 'true' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "water_hot", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "false" }),
+    (0, swagger_1.ApiProperty)({ example: 'false' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "conditioner", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "true" }),
+    (0, swagger_1.ApiProperty)({ example: 'true' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "freezer", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "euroremont" }),
+    (0, swagger_1.ApiProperty)({ example: 'euroremont' }),
     __metadata("design:type", String)
 ], CreateAdDto.prototype, "status", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "65000" }),
+    (0, swagger_1.ApiProperty)({ example: '65000' }),
     __metadata("design:type", String)
 ], CreateAdDto.prototype, "price", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "5" }),
+    (0, swagger_1.ApiProperty)({ example: '5' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "people", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "oilali" }),
-    __metadata("design:type", Number)
+    (0, swagger_1.ApiProperty)({ example: 'oilali' }),
+    __metadata("design:type", String)
 ], CreateAdDto.prototype, "client_status", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "5" }),
+    (0, swagger_1.ApiProperty)({ example: '5' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "square_meter", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "false" }),
+    (0, swagger_1.ApiProperty)({ example: 'false' }),
     __metadata("design:type", Boolean)
 ], CreateAdDto.prototype, "is_floor", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "1" }),
+    (0, swagger_1.ApiProperty)({ example: '1' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "home_floor", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "1" }),
+    (0, swagger_1.ApiProperty)({ example: '1' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "total_floor", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "https://res.cloudinary.com/brickandbatten/image/upload/c_scale,w_464,h_324,dpr_2/f_auto,q_auto/v1641000863/wordpress_assets/22826-ModContemporary-Accents_w-GauntletGray-a-ok.jpg?_i=AA" }),
+    (0, swagger_1.ApiProperty)({
+        example: 'https://res.cloudinary.com/brickandbatten/image/upload/c_scale,w_464,h_324,dpr_2/f_auto,q_auto/v1641000863/wordpress_assets/22826-ModContemporary-Accents_w-GauntletGray-a-ok.jpg?_i=AA',
+    }),
     __metadata("design:type", String)
 ], CreateAdDto.prototype, "img", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "507f1f77bcf86cd799439011" }),
+    (0, swagger_1.ApiProperty)({ example: '507f1f77bcf86cd799439011' }),
     __metadata("design:type", Number)
 ], CreateAdDto.prototype, "user_id", void 0);
 exports.CreateAdDto = CreateAdDto;

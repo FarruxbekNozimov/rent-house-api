@@ -13,14 +13,13 @@ exports.NotificationSchema = exports.Notification = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 let Notification = class Notification {
-    ;
 };
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Notification.prototype, "user_id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Notification.prototype, "appeal_id", void 0);
 __decorate([

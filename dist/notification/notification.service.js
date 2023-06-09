@@ -32,6 +32,9 @@ let NotificationService = class NotificationService {
     async findOne(id) {
         return this.currentModel.findById(id).exec();
     }
+    async fineByUserId(user_id) {
+        return this.currentModel.find({ user_id }).exec();
+    }
     async update(id, updateNotificationDto) {
         return this.currentModel
             .findByIdAndUpdate(id, updateNotificationDto, { new: true })

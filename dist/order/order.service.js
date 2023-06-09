@@ -32,6 +32,9 @@ let OrderService = class OrderService {
     async findOne(id) {
         return this.currentModel.findById(id).exec();
     }
+    async findBySellerId(id) {
+        return this.currentModel.find({ seller_id: id }).exec();
+    }
     async update(id, updateOrderDto) {
         return this.currentModel
             .findByIdAndUpdate(id, updateOrderDto, { new: true })

@@ -12,5 +12,6 @@ import { JwtModule } from '@nestjs/jwt';
   ],
   controllers: [AdController],
   providers: [AdService],
+  exports: [AdService],
 })
 export class AdModule {}

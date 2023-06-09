@@ -18,47 +18,61 @@ const user_schema_1 = require("./schemas/user.schema");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const bcrypt = require("bcrypt");
+const ad_service_1 = require("../ad/ad.service");
+const order_service_1 = require("../order/order.service");
+const notification_service_1 = require("../notification/notification.service");
 let UserService = class UserService {
-    constructor(orderModel) {
-        this.orderModel = orderModel;
+    constructor(userModel, adService, orderService, notificationService) {
+        this.userModel = userModel;
+        this.adService = adService;
+        this.orderService = orderService;
+        this.notificationService = notificationService;
     }
     async create(createUserDto) {
         const hashedPassword = await bcrypt.hash(createUserDto.password, 7);
-        const res = await new this.orderModel(Object.assign(Object.assign({}, createUserDto), { password: hashedPassword })).save();
+        const res = await new this.userModel(Object.assign(Object.assign({}, createUserDto), { password: hashedPassword })).save();
         return res;
     }
     async findAll(query) {
-        const res = await this.orderModel.find().exec();
+        let res = await this.userModel.find();
         return res;
     }
     async findOne(id) {
-        return this.orderModel.findById(id).exec();
+        let res = await this.userModel.findById(id);
+        let ads = await this.adService.findByUserId(id);
+        let orders = await this.orderService.findBySellerId(id);
+        let notification = await this.notificationService.fineByUserId(id);
+        let result = Object.assign(Object.assign({}, res.toObject()), { ads, orders, notification });
+        return result;
     }
     async findByPhone(phone) {
-        const res = await this.orderModel.findOne({ phone }).exec();
+        const res = await this.userModel.findOne({ phone }).exec();
         if (!res)
             throw new common_1.HttpException({ msg: `User not found` }, common_1.HttpStatus.BAD_REQUEST);
         return res;
     }
     async findByEmail(email) {
-        const res = await this.orderModel.findOne({ email }).exec();
+        const res = await this.userModel.findOne({ email }).exec();
         if (!res)
             throw new common_1.HttpException({ msg: `User not found` }, common_1.HttpStatus.BAD_REQUEST);
         return res;
     }
     async update(id, updateUserDto) {
-        return this.orderModel
+        return this.userModel
             .findByIdAndUpdate(id, updateUserDto, { new: true })
             .exec();
     }
     async remove(id) {
-        return this.orderModel.findByIdAndDelete(id).exec();
+        return this.userModel.findByIdAndDelete(id).exec();
     }
 };
 UserService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(user_schema_1.User.name)),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        ad_service_1.AdService,
+        order_service_1.OrderService,
+        notification_service_1.NotificationService])
 ], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

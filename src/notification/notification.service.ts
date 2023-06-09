@@ -29,6 +29,10 @@ export class NotificationService {
     return this.currentModel.findById(id).exec();
   }
 
+  async fineByUserId(user_id: string) {
+    return this.currentModel.find({ user_id }).exec();
+  }
+
   async update(id: string, updateNotificationDto: UpdateNotificationDto) {
     return this.currentModel
       .findByIdAndUpdate(id, updateNotificationDto, { new: true })

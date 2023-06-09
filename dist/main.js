@@ -19,9 +19,8 @@ const start = async () => {
         app.setGlobalPrefix('api');
         const config = new swagger_1.DocumentBuilder()
             .setTitle('NestJS TEST')
-            .setDescription('REST API')
+            .setDescription('REST API | NodeJS, NestJS, MongoDB, mongoose')
             .setVersion('1.0.0')
-            .addTag('NodeJS, NestJS, MongoDB, mongoose')
             .addBearerAuth()
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);

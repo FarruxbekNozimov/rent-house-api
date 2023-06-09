@@ -5,10 +5,10 @@ export type AdDocument = HydratedDocument<Ad>;
 
 @Schema({ timestamps: true })
 export class Ad {
-  @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'Region' }])
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Region' })
   region_id: mongoose.Schema.Types.ObjectId;
 
-  @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'District' }])
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'District' })
   district_id: mongoose.Schema.Types.ObjectId;
 
   @Prop()
@@ -45,7 +45,7 @@ export class Ad {
   people: number;
 
   @Prop()
-  client_status: number;
+  client_status: string;
 
   @Prop()
   square_meter: number;
@@ -62,7 +62,7 @@ export class Ad {
   @Prop()
   img: string;
 
-  @Prop([{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }])
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   user_id: mongoose.Schema.Types.ObjectId;
 }
 

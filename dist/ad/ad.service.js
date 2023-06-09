@@ -32,6 +32,9 @@ let AdService = class AdService {
     async findOne(id) {
         return this.currentModel.findById(id).exec();
     }
+    async findByUserId(id) {
+        return this.currentModel.find({ user_id: id }).exec();
+    }
     async update(id, updateAdDto) {
         return this.currentModel
             .findByIdAndUpdate(id, updateAdDto, { new: true })

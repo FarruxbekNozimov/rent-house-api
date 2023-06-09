@@ -23,19 +23,19 @@ let AuthService = class AuthService {
     }
     async login(loginDto, res) {
         const { phone, password } = loginDto;
-        const admins = await this.adminService.findByPhone(phone);
-        if (!admins) {
+        const admin = await this.adminService.findByPhone(phone);
+        if (!admin) {
             throw new common_1.HttpException({ msg: `User not found` }, common_1.HttpStatus.BAD_REQUEST);
         }
-        const isMatchPass = await bcrypt.compare(password, admins.password);
+        const isMatchPass = await bcrypt.compare(password, admin.password);
         if (!isMatchPass) {
             throw new common_1.UnauthorizedException({
                 msg: `Parol yoki Login xato kiritilgan !!!`,
             });
         }
-        const tokens = await this.getToken(admins.id, 'ADMIN');
+        const tokens = await this.getToken(admin.id, 'ADMIN');
         const hashed_refresh_token = await bcrypt.hash(tokens.refresh_token, 7);
-        const updatedUser = await this.adminService.update(admins.id, {
+        const updatedUser = await this.adminService.update(admin.id, {
             token: hashed_refresh_token,
         });
         res.cookie('token', tokens.refresh_token, {
@@ -45,7 +45,7 @@ let AuthService = class AuthService {
         const response = {
             status: 200,
             msg: 'Muvaffaqiyatli kirdingiz',
-            admins: updatedUser,
+            admin: updatedUser,
             tokens,
         };
         return response;
@@ -95,7 +95,7 @@ let AuthService = class AuthService {
         const response = {
             status: 200,
             msg: 'Muvaffaqiyatli kirdingiz',
-            admins: updatedUser,
+            admin: updatedUser,
             tokens,
         };
         return response;

@@ -22,23 +22,23 @@ export class AuthService {
 
   async login(loginDto: LoginDto, res: Response) {
     const { phone, password } = loginDto;
-    const admins = await this.adminService.findByPhone(phone);
-    if (!admins) {
+    const admin = await this.adminService.findByPhone(phone);
+    if (!admin) {
       throw new HttpException(
         { msg: `User not found` },
         HttpStatus.BAD_REQUEST,
       );
     }
-    const isMatchPass = await bcrypt.compare(password, admins.password);
+    const isMatchPass = await bcrypt.compare(password, admin.password);
     if (!isMatchPass) {
       throw new UnauthorizedException({
         msg: `Parol yoki Login xato kiritilgan !!!`,
       });
     }
-    const tokens = await this.getToken(admins.id, 'ADMIN');
+    const tokens = await this.getToken(admin.id, 'ADMIN');
 
     const hashed_refresh_token = await bcrypt.hash(tokens.refresh_token, 7);
-    const updatedUser = await this.adminService.update(admins.id, {
+    const updatedUser = await this.adminService.update(admin.id, {
       token: hashed_refresh_token,
     });
 
@@ -50,7 +50,7 @@ export class AuthService {
     const response = {
       status: 200,
       msg: 'Muvaffaqiyatli kirdingiz',
-      admins: updatedUser,
+      admin: updatedUser,
       tokens,
     };
     return response;
@@ -117,7 +117,7 @@ export class AuthService {
     const response = {
       status: 200,
       msg: 'Muvaffaqiyatli kirdingiz',
-      admins: updatedUser,
+      admin: updatedUser,
       tokens,
     };
     return response;

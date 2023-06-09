@@ -50,6 +50,13 @@ export declare class NotificationService {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
+    fineByUserId(user_id: string): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Notification> & Omit<Notification & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>> & Omit<import("mongoose").Document<unknown, {}, Notification> & Omit<Notification & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never> & Required<{
+        _id: import("mongoose").Types.ObjectId;
+    }>, never>)[]>;
     update(id: string, updateNotificationDto: UpdateNotificationDto): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Notification> & Omit<Notification & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Notification> & Omit<Notification & {

@@ -50,6 +50,13 @@ export declare class OrderService {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
+    findBySellerId(id: string): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>> & Omit<import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never> & Required<{
+        _id: import("mongoose").Types.ObjectId;
+    }>, never>)[]>;
     update(id: string, updateOrderDto: UpdateOrderDto): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Order> & Omit<Order & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Order> & Omit<Order & {

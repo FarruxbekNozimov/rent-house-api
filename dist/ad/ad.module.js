@@ -23,6 +23,7 @@ AdModule = __decorate([
         ],
         controllers: [ad_controller_1.AdController],
         providers: [ad_service_1.AdService],
+        exports: [ad_service_1.AdService],
     })
 ], AdModule);
 exports.AdModule = AdModule;

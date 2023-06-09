@@ -50,6 +50,13 @@ export declare class AdService {
     }, never> & Required<{
         _id: import("mongoose").Types.ObjectId;
     }>, never>>;
+    findByUserId(id: string): Promise<(import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>> & Omit<import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never> & Required<{
+        _id: import("mongoose").Types.ObjectId;
+    }>, never>)[]>;
     update(id: string, updateAdDto: UpdateAdDto): Promise<import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {
         _id: import("mongoose").Types.ObjectId;
     }, never>> & Omit<import("mongoose").Document<unknown, {}, Ad> & Omit<Ad & {

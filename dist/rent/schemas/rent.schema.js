@@ -13,14 +13,13 @@ exports.RentSchema = exports.Rent = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 let Rent = class Rent {
-    ;
 };
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'Region' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'Region' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Rent.prototype, "region_id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'District' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'District' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Rent.prototype, "district_id", void 0);
 __decorate([
@@ -84,7 +83,7 @@ __decorate([
     __metadata("design:type", String)
 ], Rent.prototype, "img", void 0);
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Rent.prototype, "user_id", void 0);
 Rent = __decorate([

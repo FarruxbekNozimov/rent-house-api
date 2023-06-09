@@ -26,6 +26,10 @@ export class OrderService {
     return this.currentModel.findById(id).exec();
   }
 
+  async findBySellerId(id: string) {
+    return this.currentModel.find({ seller_id: id }).exec();
+  }
+
   async update(id: string, updateOrderDto: UpdateOrderDto) {
     return this.currentModel
       .findByIdAndUpdate(id, updateOrderDto, { new: true })

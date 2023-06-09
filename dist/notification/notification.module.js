@@ -18,11 +18,14 @@ let NotificationModule = class NotificationModule {
 NotificationModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forFeature([{ name: notification_schema_1.Notification.name, schema: notification_schema_1.NotificationSchema }]),
+            mongoose_1.MongooseModule.forFeature([
+                { name: notification_schema_1.Notification.name, schema: notification_schema_1.NotificationSchema },
+            ]),
             jwt_1.JwtModule,
         ],
         controllers: [notification_controller_1.NotificationController],
         providers: [notification_service_1.NotificationService],
+        exports: [notification_service_1.NotificationService],
     })
 ], NotificationModule);
 exports.NotificationModule = NotificationModule;

@@ -45,7 +45,7 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Login User' }),
     (0, common_1.HttpCode)(200),
-    (0, common_1.Post)('users/login'),
+    (0, common_1.Post)('user/login'),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Res)({ passthrough: true })),
     __metadata("design:type", Function),
@@ -55,7 +55,7 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Register User' }),
     (0, common_1.HttpCode)(200),
-    (0, common_1.Post)('users/register'),
+    (0, common_1.Post)('user/register'),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Res)({ passthrough: true })),
     __metadata("design:type", Function),

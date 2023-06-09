@@ -26,6 +26,10 @@ export class AdService {
     return this.currentModel.findById(id).exec();
   }
 
+  async findByUserId(id: string) {
+    return this.currentModel.find({ user_id: id }).exec();
+  }
+
   async update(id: string, updateAdDto: UpdateAdDto) {
     return this.currentModel
       .findByIdAndUpdate(id, updateAdDto, { new: true })

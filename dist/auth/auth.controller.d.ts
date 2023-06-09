@@ -33,7 +33,7 @@ export declare class AuthController {
     login(loginDto: LoginDto, res: Response): Promise<{
         status: number;
         msg: string;
-        admins: import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("../admin/schemas/admin.schema").Admin> & Omit<import("../admin/schemas/admin.schema").Admin & {
+        admin: import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("../admin/schemas/admin.schema").Admin> & Omit<import("../admin/schemas/admin.schema").Admin & {
             _id: import("mongoose").Types.ObjectId;
         }, never>> & Omit<import("mongoose").Document<unknown, {}, import("../admin/schemas/admin.schema").Admin> & Omit<import("../admin/schemas/admin.schema").Admin & {
             _id: import("mongoose").Types.ObjectId;
@@ -48,7 +48,7 @@ export declare class AuthController {
     loginUser(loginDto: LoginDto, res: Response): Promise<{
         status: number;
         msg: string;
-        admins: import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("../user/schemas/user.schema").User> & Omit<import("../user/schemas/user.schema").User & {
+        admin: import("mongoose").Document<unknown, {}, import("mongoose").Document<unknown, {}, import("../user/schemas/user.schema").User> & Omit<import("../user/schemas/user.schema").User & {
             _id: import("mongoose").Types.ObjectId;
         }, never>> & Omit<import("mongoose").Document<unknown, {}, import("../user/schemas/user.schema").User> & Omit<import("../user/schemas/user.schema").User & {
             _id: import("mongoose").Types.ObjectId;

@@ -15,11 +15,11 @@ const mongoose_2 = require("mongoose");
 let Ad = class Ad {
 };
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'Region' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'Region' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Ad.prototype, "region_id", void 0);
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'District' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'District' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Ad.prototype, "district_id", void 0);
 __decorate([
@@ -68,7 +68,7 @@ __decorate([
 ], Ad.prototype, "people", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], Ad.prototype, "client_status", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),
@@ -91,7 +91,7 @@ __decorate([
     __metadata("design:type", String)
 ], Ad.prototype, "img", void 0);
 __decorate([
-    (0, mongoose_1.Prop)([{ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }]),
+    (0, mongoose_1.Prop)({ type: mongoose_2.default.Schema.Types.ObjectId, ref: 'User' }),
     __metadata("design:type", mongoose_2.default.Schema.Types.ObjectId)
 ], Ad.prototype, "user_id", void 0);
 Ad = __decorate([

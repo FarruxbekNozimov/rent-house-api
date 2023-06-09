@@ -23,6 +23,7 @@ OrderModule = __decorate([
         ],
         controllers: [order_controller_1.OrderController],
         providers: [order_service_1.OrderService],
+        exports: [order_service_1.OrderService],
     })
 ], OrderModule);
 exports.OrderModule = OrderModule;

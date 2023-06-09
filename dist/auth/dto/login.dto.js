@@ -14,7 +14,7 @@ const swagger_1 = require("@nestjs/swagger");
 class LoginDto {
 }
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '887038005' }),
+    (0, swagger_1.ApiProperty)({ example: '887038006' }),
     __metadata("design:type", String)
 ], LoginDto.prototype, "phone", void 0);
 __decorate([

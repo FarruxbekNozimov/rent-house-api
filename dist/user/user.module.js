@@ -13,6 +13,9 @@ const user_controller_1 = require("./user.controller");
 const mongoose_1 = require("@nestjs/mongoose");
 const user_schema_1 = require("./schemas/user.schema");
 const jwt_1 = require("@nestjs/jwt");
+const ad_module_1 = require("../ad/ad.module");
+const order_module_1 = require("../order/order.module");
+const notification_module_1 = require("../notification/notification.module");
 let UserModule = class UserModule {
 };
 UserModule = __decorate([
@@ -20,6 +23,9 @@ UserModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: user_schema_1.User.name, schema: user_schema_1.UserSchema }]),
             jwt_1.JwtModule,
+            ad_module_1.AdModule,
+            order_module_1.OrderModule,
+            notification_module_1.NotificationModule,
         ],
         controllers: [user_controller_1.UserController],
         providers: [user_service_1.UserService],

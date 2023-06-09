@@ -28,7 +28,7 @@ export class AuthController {
 
   @ApiOperation({ summary: 'Login User' })
   @HttpCode(200)
-  @Post('users/login')
+  @Post('user/login')
   loginUser(
     @Body() loginDto: LoginDto,
     @Res({ passthrough: true }) res: Response,
@@ -38,7 +38,7 @@ export class AuthController {
 
   @ApiOperation({ summary: 'Register User' })
   @HttpCode(200)
-  @Post('users/register')
+  @Post('user/register')
   registerUser(
     @Body() createUserDto: CreateUserDto,
     @Res({ passthrough: true }) res: Response,

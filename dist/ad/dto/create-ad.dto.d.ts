@@ -12,7 +12,7 @@ export declare class CreateAdDto {
     status: string;
     price: string;
     people: number;
-    client_status: number;
+    client_status: string;
     square_meter: number;
     is_floor: boolean;
     home_floor: number;
