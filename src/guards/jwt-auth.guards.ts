@@ -14,12 +14,12 @@ export class JwtAuthGuard implements CanActivate {
     const authHeader = req.headers.authorization;
     if (!authHeader)
       throw new UnauthorizedException({
-        msg: "Foydalanuvchi avtorizatsiyadan o'tmagan !!!",
+        msg: 'User is not authorized',
       });
     const [bearer, token] = authHeader.split(' ');
     if (bearer !== 'Bearer' || !token) {
       throw new UnauthorizedException({
-        msg: "Foydalanuvchi avtorizatsiyadan o'tmagan !!!",
+        msg: 'User is not authorized',
       });
     }
     let user: any;
@@ -29,7 +29,7 @@ export class JwtAuthGuard implements CanActivate {
       });
     } catch (error) {
       throw new UnauthorizedException({
-        msg: "Foydalanuvchi avtorizatsiyadan o'tmagan !!!",
+        msg: 'User is not authorized',
       });
     }
     req.user = user;

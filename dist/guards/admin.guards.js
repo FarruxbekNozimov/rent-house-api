@@ -21,13 +21,13 @@ let AdminGuards = class AdminGuards {
         const authHeader = req.headers.authorization;
         if (!authHeader)
             throw new common_1.UnauthorizedException({
-                msg: "Foydalanuvchi ro'yxatdan o'tmagan",
+                msg: 'User not autorized',
             });
         const bearer = authHeader.split(' ')[0];
         const token = authHeader.split(' ')[1];
         if (bearer !== 'Bearer' || !token) {
             throw new common_1.UnauthorizedException({
-                msg: "Foydalanuvchi ro'yxatdan o'tmagan",
+                msg: 'User not autorized',
             });
         }
         let user;
@@ -38,12 +38,12 @@ let AdminGuards = class AdminGuards {
         }
         catch (error) {
             throw new common_1.UnauthorizedException({
-                msg: "Foydalanuvchi ro'yxatdan o'tmagan",
+                msg: 'User not autorized',
             });
         }
         if (user.role != 'ADMIN') {
             throw new common_1.UnauthorizedException({
-                msg: 'Ruxsat etilmagan foydalanuvchi',
+                msg: 'User is not admin',
             });
         }
         req.user = user;

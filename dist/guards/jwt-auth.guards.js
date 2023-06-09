@@ -21,12 +21,12 @@ let JwtAuthGuard = class JwtAuthGuard {
         const authHeader = req.headers.authorization;
         if (!authHeader)
             throw new common_1.UnauthorizedException({
-                msg: "Foydalanuvchi avtorizatsiyadan o'tmagan !!!",
+                msg: 'User is not authorized',
             });
         const [bearer, token] = authHeader.split(' ');
         if (bearer !== 'Bearer' || !token) {
             throw new common_1.UnauthorizedException({
-                msg: "Foydalanuvchi avtorizatsiyadan o'tmagan !!!",
+                msg: 'User is not authorized',
             });
         }
         let user;
@@ -37,7 +37,7 @@ let JwtAuthGuard = class JwtAuthGuard {
         }
         catch (error) {
             throw new common_1.UnauthorizedException({
-                msg: "Foydalanuvchi avtorizatsiyadan o'tmagan !!!",
+                msg: 'User is not authorized',
             });
         }
         req.user = user;
